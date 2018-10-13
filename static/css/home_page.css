@@ -1,0 +1,119 @@
+body{
+    background-color: #061328;
+}
+
+#page_content{
+    margin-top: 5%;
+}
+#navigation-sidebar{
+    z-index: 99;
+}
+#roulette-wheel{
+    z-index: 99;
+    width: 80%;
+    margin-left: 10%;
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: lightgoldenrodyellow;
+
+    padding: 1%;
+}
+#roulette-triangle{
+
+    margin-top: 0.25%;
+    margin-left: 49.6%;
+
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid gold;
+    
+    height: 0;
+    width: 0;
+}
+#betting-controls{
+    margin-left: 35%;
+    width: 30%;
+    margin-top: 3%;
+}
+
+#color-alternatives{
+    margin-top: 5%;
+    text-align: center;
+}
+#bet-amount-controlls{
+    text-align: center;
+}
+.dot{
+    height: 4vw;
+    width: 4vw;    
+    border-radius: 50%;
+    display: inline-block;
+}
+#color-label{
+    text-align: center;
+    color: darkgrey;
+    margin-top: 4%;
+}
+#red-dot{
+    background-color:red;
+    margin-right: 15%;
+}
+#green-dot{
+    background-color:green;
+    margin-right: 15%;
+}
+#black-dot{
+    background-color:black;
+}
+.checked{
+    border-style: solid;
+    border-width: 3px;
+    border-color: lightblue;
+}
+.bet-table{
+    display: inline-block;
+
+    background-color: #091d3d;
+}
+
+thead tr th{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    font-size: 1.25vw;
+    color: #a3a3a3;
+}
+thead tr{
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #474646;
+    border-width: 3px;
+}
+#bet-tables{
+    text-align: center;
+    margin-top: 3%;
+}
+#red-table{
+    float: left;
+    margin-left: 10%;
+}
+#black-table{
+    float: right;
+    margin-right: 10%;
+}
+#green-table{
+    float: middle;
+}
+
+#red-table thead{
+    background-color: red;
+}
+#black-table thead{
+    background-color: black;
+}
+#green-table thead{
+    background-color: green;
+}

@@ -1,0 +1,29 @@
+#error-label{
+
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 5vw;
+
+    text-align: center;
+
+    margin-top: 2.5%;
+}
+#error-message{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 3vw;
+
+    text-align: center;
+
+    color: red;
+}
+#go-back-button{
+    margin-top: 5%;
+
+    width: auto;
+    height: auto;
+
+    font-size: 2vw;
+
+}
+#button-wrapper{
+    text-align: center;
+}

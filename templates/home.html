@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{template_data.name}}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.theme.default.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/home_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/roulette_numbers.css') }}">
+
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+
+    <script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/roulette_script.js') }}"></script>
+
+    <script src="{{ url_for('static',filename='js/betting_controlls.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- <script src="{{ url_for('static',filename='js/home_page_socketio.js') }}"></script> -->
+
+</head>
+{% include "navigation_bar.html" %}
+<body id="{{ template_data.url }}">
+    <div id="page_content">
+        <div id="roulette-wheel">
+            <div class="owl-carousel owl-theme">
+                <div class="item-green element-roulette" data-item="3"><h4>0</h4></div>
+                <div class="item-red element-roulette" data-item="1"><h4>1</h4></div>
+                <div class="item-black element-roulette" data-item="2"><h4>8</h4></div>
+                <div class="item-red element-roulette" data-item="1"><h4>2</h4></div>
+                <div class="item-black element-roulette" data-item="2"><h4>9</h4></div>
+                <div class="item-red element-roulette" data-item="1"><h4>3</h4></div>
+                <div class="item-black element-roulette" data-item="2"><h4>10</h4></div>
+                <div class="item-red element-roulette" data-item="1"><h4>4</h4></div>
+                <div class="item-black element-roulette" data-item="2"><h4>11</h4></div>
+                <div class="item-red element-roulette" data-item="1"><h4>5</h4></div>
+                <div class="item-black element-roulette" data-item="2"><h4>12</h4></div>
+                <div class="item-red element-roulette" data-item="1"><h4>6</h4></div>
+                <div class="item-black element-roulette" data-item="2"><h4>13</h4></div>
+                <div class="item-red element-roulette" data-item="1"><h4>7</h4></div>
+                <div class="item-black element-roulette" data-item="2"><h4>14</h4></div>
+            </div>
+
+            <div id="roulette-triangle"></div>
+        </div>
+        <div id="betting-controls">
+            <div id="bet-amount-controlls">
+                <input type="text" id="bet-amount" placeholder="Enter amount"/>
+                <button id="bet-button">Bet</button>
+            </div>
+            <!-- <h1 id="color-label">Select color</h1>
+            <div id="color-alternatives">
+                <span id="red-dot" class="dot" data-value="1"></span>
+                <span id="green-dot" class="dot" data-value="3"></span>
+                <span id="black-dot" class="dot" data-value="2"></span>
+            </div> -->
+        </div>
+        <div id="bet-tables">
+            <table class="bet-table" id="red-table">
+                <thead>
+                    <tr>
+                        <th class="bet-table-head-red">Red</th>
+                        <th class="bet-table-head-red">x2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <table class="bet-table" id="green-table">
+                <thead>
+                    <tr>
+                        <th class="bet-table-head-green">Green</th>
+                        <th class="bet-table-head-green">x14</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Magistern</td>
+                        <th>23$</th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="bet-table" id="black-table">
+                <thead>
+                    <tr>
+                        <th class="bet-table-head-black">Black</th>
+                        <th class="bet-table-head-black">x2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

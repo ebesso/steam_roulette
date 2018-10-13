@@ -1,0 +1,37 @@
+.img-container{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border-width: 3px;
+    border-color: aliceblue;
+    border-style: solid;
+    right: 3px;
+    margin-top: 3px;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+#inventory-container{
+    width: 50%;
+    margin-left: 25%;
+}
+#inventory-label{
+    text-align: center;
+    font-size: 6vw;
+}
+.img-container:hover{
+    border-color: lightblue;
+}
+.checked{
+    border-color: blue;
+}
+#deposit-button{
+    width: auto;
+    height: auto;
+
+    font-size: 2vw;
+}
+#button-wrapper{
+    text-align: center;
+}

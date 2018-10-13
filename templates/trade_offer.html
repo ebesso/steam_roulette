@@ -1,0 +1,33 @@
+<html>
+    <title>{{ template_data.name }}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/deposit.css') }}">
+    
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+
+    <script src="{{ url_for('static',filename='js/deposit_controlls.js') }}"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<head>
+</head>
+{% include "navigation_bar.html" %}
+<body data-website-url="{{ template_data.url }}">
+    <h1 id="inventory-label">Your inventory</h1>
+    <div id="inventory-container">
+        <form action="/{{ action }}" method="POST" id="deposit-form">
+            {% for inventory_item in inventory_data %}
+            <input type="checkbox" id="{{inventory_item.assetid}}" name="{{inventory_item.assetid}}" value="{{ inventory_item.assetid }}"hidden>
+            <div class="img-container" data-assetid="{{ inventory_item.assetid }}" title="{{ inventory_item.name }}" data-price="{{ inventory_item.price }}">
+                <img alt="Item image" class="img-responsive" src="{{ inventory_item.icon_url }}" ></img>
+            </div>
+            {% endfor %}
+        </form>
+        <div id="button-wrapper">
+            <button id="deposit-button" class="btn btn-success">{{action}} 0$</button>
+        </div>
+    </div>
+</body>
+</html>

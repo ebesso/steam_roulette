@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Error</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/error.css') }}">
+
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+
+</head>
+<body>
+    <h1 id="error-label">Something went wrong</h1>
+    <h2 id="error-message">{{ error }}</h2>
+
+    <div id="button-wrapper">
+        <button id="go-back-button" class="btn btn-info" onclick="window.history.go(-1); return false;">Go back</button>
+    </div>
+</body>
+</html>
