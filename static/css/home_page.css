@@ -1,5 +1,5 @@
 body{
-    background-color: #061328;
+    background-color: white;
 }
 
 #page_content{
@@ -11,11 +11,12 @@ body{
 #roulette-wheel{
     z-index: 99;
     width: 80%;
+    
     margin-left: 10%;
 
-    border-width: 2px;
+    /* border-width: 0.2vw;
     border-style: solid;
-    border-color: lightgoldenrodyellow;
+    border-color: lightgoldenrodyellow; */
 
     padding: 1%;
 }
@@ -44,76 +45,81 @@ body{
 #bet-amount-controlls{
     text-align: center;
 }
-.dot{
-    height: 4vw;
-    width: 4vw;    
-    border-radius: 50%;
-    display: inline-block;
-}
+
 #color-label{
     text-align: center;
     color: darkgrey;
     margin-top: 4%;
 }
-#red-dot{
-    background-color:red;
-    margin-right: 15%;
-}
-#green-dot{
-    background-color:green;
-    margin-right: 15%;
-}
-#black-dot{
-    background-color:black;
-}
 .checked{
     border-style: solid;
     border-width: 3px;
-    border-color: lightblue;
+    border-color: gold;
 }
+
 .bet-table{
     display: inline-block;
 
-    background-color: #091d3d;
+}
+.bet-header thead tr th{
+    padding-left: 6vw;
+    padding-right: 6vw;
+    
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+ 
+    border-radius: 0.5vw;
+
+    color: white;
+    font-weight: 200;
 }
 
-thead tr th{
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-
-    font-size: 1.25vw;
-    color: #a3a3a3;
-}
-thead tr{
-    border-radius: 20px;
-    border-style: solid;
-    border-color: #474646;
-    border-width: 3px;
-}
 #bet-tables{
+    margin-top: 2%;
     text-align: center;
-    margin-top: 3%;
 }
+
 #red-table{
-    float: left;
     margin-left: 10%;
+    float: left;
 }
 #black-table{
-    float: right;
     margin-right: 10%;
+    float: right;
 }
 #green-table{
-    float: middle;
+    float: middle;      
 }
 
-#red-table thead{
+#red-header thead tr th{
     background-color: red;
 }
-#black-table thead{
+#green-header thead tr th{
+    background-color: green;
+}
+#black-header thead tr th{
     background-color: black;
 }
-#green-table thead{
-    background-color: green;
+
+.player-bet-table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.player-bet-table tr th{
+    font-weight: 100;   
+    border-bottom: 1px solid #ddd;     
+}
+
+.player-bet-table tr th, td{
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+
+    text-align: left;
+}
+#countdown-bar{
+    width: 50%;
+    height: 8px;
+
+    margin-left: 25%;
 }

@@ -1,5 +1,5 @@
 .owl-carousel .item-red {
-    height: 200px;
+    height: 10vw;
     width: auto;
     background: red;
     padding: 1rem;
@@ -10,7 +10,7 @@
     font-weight: bold;
 }
 .owl-carousel .item-green {
-    height: 200px;
+    height: 10vw;
     width: auto;
     background: green;
     padding: 1rem;
@@ -21,7 +21,7 @@
     font-weight: bold;
 }
 .owl-carousel .item-black {
-    height: 200px;
+    height: 10vw;
     width: auto;
     background: black;
     padding: 1rem;

@@ -71,6 +71,7 @@ def client_bet(data):
             new_bet_data['alternative'] = 'black'
         else:
             new_bet_data['alternative'] = 'green'
+        
 
         socketio.emit('new_bet', json.dumps(new_bet_data), broadcast=True)
     

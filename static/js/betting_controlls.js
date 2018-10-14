@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.dot').click(function(){
+    $('.bet-header').click(function(){
         if($(this).hasClass("checked") == false){
             $(".checked").removeClass("checked");
         }

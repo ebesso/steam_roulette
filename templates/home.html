@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/home_page.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/roulette_numbers.css') }}">
 
+    <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
+
     <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
 
@@ -22,7 +24,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <!-- <script src="{{ url_for('static',filename='js/home_page_socketio.js') }}"></script> -->
+    <script src="{{ url_for('static',filename='js/home_page_socketio.js') }}"></script>
 
 </head>
 {% include "navigation_bar.html" %}
@@ -46,56 +48,79 @@
                 <div class="item-red element-roulette" data-item="1"><h4>7</h4></div>
                 <div class="item-black element-roulette" data-item="2"><h4>14</h4></div>
             </div>
-
-            <div id="roulette-triangle"></div>
+        <div id="roulette-triangle"></div>
+            
         </div>
+        
+        <div id="countdown-bar"></div>
+        
         <div id="betting-controls">
             <div id="bet-amount-controlls">
                 <input type="text" id="bet-amount" placeholder="Enter amount"/>
                 <button id="bet-button">Bet</button>
             </div>
-            <!-- <h1 id="color-label">Select color</h1>
-            <div id="color-alternatives">
-                <span id="red-dot" class="dot" data-value="1"></span>
-                <span id="green-dot" class="dot" data-value="3"></span>
-                <span id="black-dot" class="dot" data-value="2"></span>
-            </div> -->
         </div>
+
+
         <div id="bet-tables">
-            <table class="bet-table" id="red-table">
-                <thead>
+
+            <div class="bet-table" id="red-table">
+
+                <table class="bet-header" id="red-header" data-value="1">
+                    <thead>
+                        <tr>
+                            <th class="bet-table-head-red">Red  <span>x2</span></th>
+                        </tr>
+                    </thead>
+                </table>
+
+                <table class="player-bet-table" id="red-player-bet-table">
                     <tr>
-                        <th class="bet-table-head-red">Red</th>
-                        <th class="bet-table-head-red">x2</th>
+                        <th>Player</th>
+                        <th>Amount</th>
                     </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-            <table class="bet-table" id="green-table">
-                <thead>
+                </table>    
+
+            </div>
+
+            <div class="bet-table" id="green-table">
+
+                <table class="bet-header" id="green-header" data-value="3">
+                    <thead>
+                        <tr>
+                            <th class="bet-table-head-green">Green  <span>x14</span></th>
+                        </tr>
+                    </thead>
+                </table>
+
+                <table class="player-bet-table" id="green-player-bet-table">
                     <tr>
-                        <th class="bet-table-head-green">Green</th>
-                        <th class="bet-table-head-green">x14</th>
+                        <th>Player</th>
+                        <th>Amount</th>
                     </tr>
-                </thead>
-                <tbody>
+                </table>   
+
+            </div>
+
+            <div class="bet-table" id="black-table">
+
+                <table class="bet-header" id="black-header" data-value="2">
+                    <thead>
+                        <tr>
+                            <th class="bet-table-head-black">Black <span>x2</span></th>
+                        </tr>
+                    </thead>
+                </table>
+
+                <table class="player-bet-table" id="black-player-bet-table">
                     <tr>
-                        <td>Magistern</td>
-                        <th>23$</th>
+                        <th>Player</th>
+                        <th>Amount</th>
                     </tr>
-                </tbody>
-            </table>
-            <table class="bet-table" id="black-table">
-                <thead>
-                    <tr>
-                        <th class="bet-table-head-black">Black</th>
-                        <th class="bet-table-head-black">x2</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+                </table>
+
+            </div>
+
         </div>
     </div>
 </body>

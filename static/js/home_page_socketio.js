@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    time_status = 0
+
+
     var connection_string = document.getElementsByTagName('body')[0].getAttribute('id');
     console.log('Trying to connect to ' + connection_string);
 
@@ -14,14 +17,35 @@ $(document).ready(function(){
         console.log('new client has connected');
     });
     socket.on('run_script', function(data){
-        $('#js-btn-jump').text('Rolling...')
+        time_status = 0;
         $(document).trigger('data-run-script', data);
+
         if(isUserLoggedIn()){
             updateBalance();
         }
     });
+
+
     socket.on('update_time', function(data){
-        $('#js-btn-jump').text('Time left: ' + data + 's')
+
+        if (time_status == 0){
+            document.getElementById('countdown-bar').innerHTML = "";
+            
+
+            var bar = new ProgressBar.Line('#countdown-bar', {
+                strokeWidth: 1,
+                easing: 'easeInOut',
+                duration: (Number(data) + 1) * 1000,
+                color: '#bdedea',
+                trailColor: '#eee',
+                trailWidth: 1,
+                svgStyle: {width: '100%', height: '100%'}
+            });
+
+            bar.animate(1);
+
+            time_status = Number(data);
+        }
     });
     $('#bet-button').click(function(){
         if (document.getElementsByClassName('checked').length > 0){
@@ -69,8 +93,9 @@ $(document).ready(function(){
     });
 
     socket.on('new_bet', function(data){
+        console.log(data);
         var json_obj = $.parseJSON(data);
-        $('#' + json_obj['alternative'] + '-table').append('<tr><td>' + json_obj['name'] + '</td><td>' + json_obj['amount'] + '$</td><tr>');
+        $('#' + json_obj['alternative'] + '-player-bet-table').append('<tr><td>' + json_obj['name'] + '</td><td>' + json_obj['amount'] + '$</td><tr>');
     });
 
     socket.on('login_required', function(){
