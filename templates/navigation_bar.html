@@ -1,27 +1,33 @@
 <header>
     <nav class="navbar navbar-expand-sm" style="background-color: whitesmoke;">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="/">{{template_data.name}}</a>
             </li>
-            {% if current_user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
-            </li>                  
+            {% if current_user.is_authenticated %}                  
             <li class="nav-item">
                 <a class="nav-link" href="/deposit">Deposit</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/withdraw">Withdraw</a>
             </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+
             <li class="nav-item">
-                <a class="nav-link" href="" id="balance">{{ balance }}</a>
+                <a class="nav-link left-item" href="" id="balance">Balance: {{ balance }}$</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+
             {% else %}
             <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
             </li>     
             {% endif %}
+
         </ul>
     </nav>
 </header>  

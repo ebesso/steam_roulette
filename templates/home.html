@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="{{ url_for('static',filename='css/home_page.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/roulette_numbers.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/navigationbar.css') }}">
 
     <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
 
@@ -25,7 +27,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script src="{{ url_for('static',filename='js/home_page_socketio.js') }}"></script>
-
+    
 </head>
 {% include "navigation_bar.html" %}
 <body id="{{ template_data.url }}">
